@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surrounded</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+
+    <style>
+        /* Scrollable control list so rows can't all crowd in at once */
+        #controlsMenu .controls-scroll {
+            max-height: 46vh;
+            overflow-y: auto;
+            padding-right: 6px;
+            margin-bottom: 4px;
+        }
+
+        #controlsMenu .controls-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #controlsMenu .controls-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 224, 168, 0.35);
+            border-radius: 3px;
+        }
+
+        #controlsMenu .controls-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .control-row.control-toggle {
+            align-items: center;
+        }
+
+        .toggle-btn {
+            font-family: "Rajdhani", Arial, sans-serif;
+            font-weight: 700;
+            font-size: 0.85em;
+            letter-spacing: 0.04em;
+            background: rgba(255, 224, 168, 0.08);
+            border: 1px solid rgba(255, 224, 168, 0.35);
+            color: rgba(255, 224, 168, 0.92);
+            padding: 4px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255, 224, 168, 0.2);
+            transform: translateY(-1px);
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- =========================
+         MAIN MENU
+    ========================== -->
+
+   <div id="mainMenu">
+
+    <div class="menu-container">
+
+     <h1>SURROUNDED</h1>
+
+        <p class="subtitle">
+            Your mission awaits, soldier.
+        </p>
+        <div class="titleLine"></div>
+
+        <button id="startButton">
+            START YOUR MISSION
+        </button>
+
+        <div class="menu-footer">
+
+            <div id="highScoreButton">
+                HS:<span id="hsValue">0</span>
+            </div>
+
+            <div id="controlsButton">
+                CONTROLS
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Controls Overlay -->
+
+    <div id="controlsMenu">
+
+        <div class="controls-window">
+
+            <h2>CONTROLS</h2>
+
+            <div class="controls-scroll">
+
+                <div class="control-row">
+                    <span>W A S D</span>
+                    <span>Move</span>
+                </div>
+
+                <div class="control-row">
+                    <span>Mouse</span>
+                    <span>Aim</span>
+                </div>
+
+                <div class="control-row">
+                    <span>Left Click</span>
+                    <span>Shoot</span>
+                </div>
+
+                <div class="control-row">
+                    <span>Shift</span>
+                    <span>Dash</span>
+                </div>
+
+                <div class="control-row">
+                    <span>R</span>
+                    <span>Reload</span>
+                </div>
+
+                <div class="control-row">
+                    <span>G</span>
+                    <span>Grenade</span>
+                </div>
+
+                 <div class="control-row">
+                    <span>F</span>
+                    <span>Freeze</span>
+                </div>
+
+                <div class="control-row">
+                    <span>1 / 2 / 3</span>
+                    <span>Switch Weapon</span>
+                </div>
+
+                <div class="control-row">
+                    <span>Esc</span>
+                    <span>Pause</span>
+                </div>
+
+                <div class="control-row">
+                    <span>M</span>
+                    <span>Mute Music</span>
+                </div>
+
+                <div class="control-row">
+                    <span>H</span>
+                    <span>Cycle HUD Style</span>
+                </div>
+
+                <div class="control-row control-toggle">
+                    <span>Mute Music</span>
+                    <button id="muteToggleBtn" class="toggle-btn" type="button">OFF</button>
+                </div>
+
+                <div class="control-row control-toggle">
+                    <span>HUD Style</span>
+                    <button id="hudToggleBtn" class="toggle-btn" type="button">FULL</button>
+                </div>
+
+            </div>
+
+            <button id="backButton">
+                BACK
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+
+</body>
+</html>

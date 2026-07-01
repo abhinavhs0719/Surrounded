@@ -1,0 +1,356 @@
+/* ===========================
+   MAIN MENU
+=========================== */
+
+#mainMenu{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at 50% 50%, rgba(8,8,10,.55) 0%, rgba(4,4,5,.72) 100%),
+        rgba(0,0,0,.18);
+
+    overflow:hidden;
+
+    z-index:999;
+}
+
+/* Slow, soft, blurred drift - same language as the game-over screen */
+#mainMenu::before,
+#mainMenu::after{
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter: blur(110px);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+#mainMenu::before{
+
+    width:52vw;
+    height:52vw;
+
+    left:6%;
+    top:8%;
+
+    background:rgba(56,56,62,.28);
+
+    animation: menuDriftOne 24s ease-in-out infinite;
+
+}
+
+#mainMenu::after{
+
+    width:46vw;
+    height:46vw;
+
+    right:6%;
+    bottom:6%;
+
+    background:rgba(40,40,46,.24);
+
+    animation: menuDriftTwo 28s ease-in-out infinite;
+
+}
+
+@keyframes menuDriftOne{
+
+    0%, 100%{ transform: translate(0, 0); }
+    50%{ transform: translate(7vw, 6vh); }
+
+}
+
+@keyframes menuDriftTwo{
+
+    0%, 100%{ transform: translate(0, 0); }
+    50%{ transform: translate(-6vw, -5vh); }
+
+}
+
+/* ===========================
+   MENU
+=========================== */
+
+.menu-container{
+
+    width:500px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.menu-container h1{
+
+    color:white;
+
+    font-size:58px;
+
+    letter-spacing:16px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    animation:floatTitle 4s ease-in-out infinite, breatheText 3.4s ease-in-out infinite;
+
+}
+
+.subtitle{
+
+    color:#b5b5b5;
+
+    font-size:18px;
+
+    letter-spacing:6px;
+
+    font-weight:300;
+
+    margin-top:10px;
+
+    margin-bottom:60px;
+
+    text-transform:uppercase;
+
+    animation:breatheText 3.8s ease-in-out infinite .3s;
+
+}
+
+/* ===========================
+   START BUTTON
+=========================== */
+
+#startButton{
+
+    background:rgba(255,255,255,.03);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:12px;
+
+    width:320px;
+
+    height:62px;
+
+    font-size:20px;
+
+    letter-spacing:4px;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+}
+
+#startButton:hover{
+
+    background:rgba(255,255,255,.08);
+
+    border-color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 20px rgba(255,255,255,.12);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.menu-footer{
+
+    position:fixed;
+
+    bottom:35px;
+
+    left:35px;
+
+    right:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#7d7d7d;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+}
+
+#controlsButton,
+#highScoreButton{
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+#controlsButton:hover,
+#highScoreButton:hover{
+
+    color:white;
+
+}
+
+/* ===========================
+   CONTROLS OVERLAY
+=========================== */
+
+#controlsMenu{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.95);
+
+}
+
+.controls-window{
+
+    width:520px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+    padding:40px;
+
+}
+
+.controls-window h2{
+
+    text-align:center;
+
+    color:white;
+
+    letter-spacing:6px;
+
+    margin-bottom:35px;
+
+}
+
+.control-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:18px 0;
+
+}
+
+.control-row span:first-child{
+
+    color:white;
+
+}
+
+.control-row span:last-child{
+
+    color:#8c8c8c;
+
+}
+
+#backButton{
+
+    margin-top:40px;
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:18px;
+
+    letter-spacing:5px;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   TITLE FLOAT
+=========================== */
+
+@keyframes floatTitle{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes breatheText{
+
+    0%, 100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.82;
+
+    }
+
+}
+
+.titleLine{
+
+    width:120px;
+
+    height:2px;
+
+    background:rgba(255,255,255,.25);
+
+    margin: 6px auto 25px auto;
+
+}
