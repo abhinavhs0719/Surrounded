@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/Gameplay_Surrounded.png" alt="Surrounded Banner" width="100%" height="100">
+  <img src="assets/Gameplay_Surrounded.png" alt="Surrounded Banner" width="100%" height="100%">
 </p>
 
 
